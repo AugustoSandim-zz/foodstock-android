@@ -14,37 +14,47 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+            <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="top"
-                android:background="@color/colorPrimary">
+                android:layout_height="192dp">
 
-                <TextView
-                    android:id="@+id/textview_toolbar_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/cardview_light_background"
-                    android:textSize="20sp" />
-            </android.support.v7.widget.Toolbar>
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin">
+
+                        <TextView
+                            android:id="@+id/textview_toolbar_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="20sp" />
+                    </android.support.v7.widget.Toolbar>
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
         </LinearLayout>
 
         <com.github.siyamed.shapeimageview.CircularImageView
-            android:layout_width="165dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|top"
-            android:padding="40dp"
+            android:layout_marginTop="93dp"
+            app:siBorderColor = "@color/colorPrimaryDark"
             android:src="@drawable/ic_coin_one_credit"
-            app:siBorderColor="@color/colorPrimaryDark"
             app:siBorderWidth="6dp" />
+
     </FrameLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="180dp"
-        android:fillViewport="true"
+        android:layout_marginTop="250dp"
         android:scrollbars="none">
 
         <LinearLayout
@@ -115,7 +125,6 @@
                 android:background="@color/colorPrimaryDark"
                 android:hint="Salvar" />
         </LinearLayout>
-
     </ScrollView>
 
 </FrameLayout>
